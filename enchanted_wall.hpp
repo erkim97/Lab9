@@ -17,7 +17,7 @@ public:
     }
 
     void describe() override {
-        cout << "Enchanted Wall" << endl;
+        cout << "This wall has faery wings on it" << endl;
     }
 
 };

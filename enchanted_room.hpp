@@ -16,7 +16,8 @@ public:
     }
 
     void describe() override {
-        cout << "You have entered an Enchanted Room" << endl;
+        cout << "Enchanted Room: "
+             << "This room has faeries in it" << endl;
     }
 };
 

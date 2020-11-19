@@ -11,7 +11,7 @@ class enchanted_maze : public maze {
 
 public:
     explicit enchanted_maze() {
-        cout << "Creating Enchanted Faery Land Maze";
+        cout << "A pretty, magical faery maze"<< endl;
     }
 
     ~enchanted_maze() override {

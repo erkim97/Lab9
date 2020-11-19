@@ -24,7 +24,11 @@ public:
     }
 
     void describe() override {
-        cout << "Enchanted door opens room: " << room1 << " and room " << room2 << endl;
+        cout << "This door has a faery wing for a handle."
+        << " This door connects Faery Room "
+        << room1
+        << " and Faery Room "
+        << room2 << endl;
     }
 
 

@@ -12,18 +12,12 @@
 
 class enchanted_factory : public maze_factory {
 public:
-    enchanted_factory() {
-        cout << "Creating Enchanted Factory Maze" << endl;
-    }
+    enchanted_factory() = default;
 
     ~enchanted_factory() override = default;
 
     maze *make_maze() const override {
         return new enchanted_maze();
-    }
-
-    wall *make_wall() const override {
-        return new enchanted_wall();
     }
 
     room *make_room() const override {
@@ -34,5 +28,8 @@ public:
         return new enchanted_door(room1, room2);
     }
 
+    wall *make_wall() const override {
+        return new enchanted_wall();
+    }
 };
 #endif //LAB9_ENCHANTED_FACTORY_HPP
