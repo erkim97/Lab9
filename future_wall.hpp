@@ -11,11 +11,6 @@ using namespace std;
 
 class future_wall : public wall {
 public:
-
-    explicit future_wall() {
-        describe();
-    }
-
     void describe() override {
         cout << "This wall has surveillance cameras on it" << endl;
     }

@@ -14,15 +14,12 @@
 class maze_factory {
 
 public:
+    //abstract class with building abstract maze, wall, room, door
     virtual ~maze_factory() = default;
-
-    virtual maze *make_maze() const = 0;
-
-    virtual wall *make_wall() const = 0;
-
-    virtual room *make_room() const = 0;
-
-    virtual door *make_door(room &r1, room &r2) const = 0;
+    virtual maze* make_maze() = 0;
+    virtual wall* make_wall() = 0;
+    virtual room* make_room(int id, wall* wall) = 0;
+    virtual door* make_door(room* room1, room* room2) = 0;
 };
 
 

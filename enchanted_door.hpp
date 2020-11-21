@@ -12,11 +12,7 @@ using namespace std;
 
 class enchanted_door : public door {
 public:
-    enchanted_door(room &a, room &b) {
-        room1 = &a;
-        room2 = &b;
-        describe();
-    }
+    enchanted_door(room* room1, room* room2) : door(room1, room2) {};
 
     ~enchanted_door() override {
         delete room1;
@@ -24,11 +20,8 @@ public:
     }
 
     void describe() override {
-        cout << "This door has a faery wing for a handle."
-        << " This door connects Faery Room "
-        << room1
-        << " and Faery Room "
-        << room2 << endl;
+        cout << "This door has a faery wing for a handle. This door connects Faery Room " <<
+             this->room1->getId() << " and Faery Room " << this->room2->getId() << endl;
     }
 
 

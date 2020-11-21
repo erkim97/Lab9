@@ -7,20 +7,21 @@
 #include "maze.hpp"
 
 class future_maze : public maze {
-
-public:
-    explicit future_maze() {
+    void describe() override{
         cout << "An Orwellian dystopian maze" << endl;
-    }
 
-    ~future_maze() override {
-        for (auto a : rooms) {
-            delete a;
+        for(room* room :  this->rooms) {
+            room->describe();
+
+            vector<wall*> roomWalls = room->getWalls();
+            for (wall* wall: roomWalls) {
+                wall->describe();
+            }
         }
-    }
 
-    void add_room(room *rm) override {
-        rooms.push_back(rm);
+        for(door* door : this->doors) {
+            door->describe();
+        }
     }
 };
 #endif //LAB9_FUTURE_MAZE_HPP

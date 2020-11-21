@@ -11,25 +11,21 @@
 #include "future_wall.hpp"
 #include "future_maze.hpp"
 
+//build future factory
 class future_factory : public maze_factory {
 public:
-    future_factory() = default;
-
-    ~future_factory() override = default;
-
-    maze *make_maze() const override {
-        return new future_maze();
+    maze* make_maze() override {
+        return new future_maze;
     }
 
-    room *make_room() const override {
-        return new future_room();
+    room* make_room(int id, wall* wall) override{
+        return new future_room(id, wall);
     }
-
-    door *make_door(room &room1, room &room2) const override {
+    door* make_door(room* room1, room* room2) override{
         return new future_door(room1, room2);
     }
 
-    wall *make_wall() const override {
+    wall* make_wall() override {
         return new future_wall();
     }
 };

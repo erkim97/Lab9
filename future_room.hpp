@@ -4,22 +4,18 @@
 
 #ifndef LAB9_FUTURE_ROOM_HPP
 #define LAB9_FUTURE_ROOM_HPP
-#define LAB9_ENCHANTED_ROOM_HPP
+
 #include "room.hpp"
 #include <iostream>
-
 using namespace std;
 
 class future_room : public room {
 public:
-    explicit future_room() {
-        describe();
-    }
+    future_room(int ID, wall* wall) : room(ID, wall) {}
 
     void describe() override {
-        cout << "Dystopian Room: "
+        cout << "Future Room: " << getId() << " This room has communist pigs in it" << endl;
 
-                << "This room has communist pigs in it" << endl;
     }
 };
 

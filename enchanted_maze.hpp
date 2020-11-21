@@ -8,21 +8,21 @@
 #include "maze.hpp"
 
 class enchanted_maze : public maze {
+    void describe() override {
+        cout << "A pretty, magical faery maze" << endl;
 
-public:
-    explicit enchanted_maze() {
-        cout << "A pretty, magical faery maze"<< endl;
-    }
+        for (room *room :  this->rooms) {
+            room->describe();
 
-    ~enchanted_maze() override {
-        for (auto a : rooms) {
-            delete a;
+            vector<wall *> roomWalls = room->getWalls();
+            for (wall *wall: roomWalls) {
+                wall->describe();
+            }
+        }
+
+        for (door *door : this->doors) {
+            door->describe();
         }
     }
-
-    void add_room(room *rm) override {
-        rooms.push_back(rm);
-    }
 };
-
 #endif //LAB9_ENCHANTED_MAZE_HPP

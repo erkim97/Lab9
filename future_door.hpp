@@ -11,11 +11,7 @@ using namespace std;
 
 class future_door : public door {
 public:
-    future_door(room &a, room &b) {
-        room1 = &a;
-        room2 = &b;
-        describe();
-    }
+    future_door(room* firstRoom, room* secondRoom) : door(firstRoom, secondRoom) {};
 
     ~future_door() override {
         delete room1;
@@ -23,11 +19,8 @@ public:
     }
 
     void describe() override {
-        cout << "This door has a soma pill for a handle. "
-        << "This door connects Dystopian Room "
-        << room1
-        << " and Dystopian Room "
-        << room2 << endl;
+        cout << "This door has a soma pill for a handle. This door connects Dystopian Room " <<
+             this->room1->getId() << " and Dystopian Room " << this->room2->getId() << endl;
     }
 
 

@@ -11,13 +11,11 @@ using namespace std;
 
 class enchanted_room : public room {
 public:
-    explicit enchanted_room() {
-        describe();
-    }
+    enchanted_room(int ID, wall* wall) : room(ID, wall) {}
 
     void describe() override {
-        cout << "Enchanted Room: "
-             << "This room has faeries in it" << endl;
+        cout << "Enchanted Room: " << getId() << " This room has faeries in it" << endl;
+
     }
 };
 

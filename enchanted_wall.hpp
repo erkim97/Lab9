@@ -10,12 +10,6 @@
 using namespace std;
 
 class enchanted_wall : public wall {
-public:
-
-    explicit enchanted_wall() {
-        describe();
-    }
-
     void describe() override {
         cout << "This wall has faery wings on it" << endl;
     }
